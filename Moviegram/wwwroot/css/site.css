@@ -1,0 +1,243 @@
+.movies-container {
+    width: 900px;
+    margin: 30px auto;
+}
+
+.movies-title {
+    margin-bottom: 25px;
+}
+
+.movie-card {
+    display: flex;
+    gap: 25px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+    .movie-card img {
+        width: 150px;
+        height: 220px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+.movie-info {
+    flex: 1;
+}
+
+    .movie-info h4 {
+        margin: 0 0 15px 0;
+        font-size: 22px;
+    }
+
+    .movie-info p {
+        margin: 8px 0;
+    }
+
+.moviegram-page {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.moviegram-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+    .moviegram-header h1 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .moviegram-header p {
+        margin: 6px 0 0;
+        color: #777;
+    }
+
+.add-movie-button {
+    background: #222;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+
+    .add-movie-button:hover {
+        color: white;
+        background: #444;
+    }
+
+
+/* ФІЛЬМ */
+
+.movies-list {
+    width: 100%;
+}
+
+.movie-card {
+    display: flex;
+    gap: 30px;
+    padding: 0 0 35px 0;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #ddd;
+}
+
+.movie-poster-container {
+    width: 220px;
+    min-width: 220px;
+}
+
+.movie-poster {
+    width: 220px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.no-poster {
+    width: 220px;
+    height: 320px;
+    background: #eee;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+
+
+/* ІНФОРМАЦІЯ */
+
+.movie-content {
+    flex: 1;
+    padding-top: 5px;
+}
+
+    .movie-content h2 {
+        margin: 0 0 10px;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+.movie-info {
+    display: flex;
+    gap: 10px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.movie-director {
+    margin-bottom: 15px;
+}
+
+.movie-description {
+    line-height: 1.6;
+    color: #444;
+    max-width: 600px;
+}
+
+
+/* КНОПКИ */
+
+.movie-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.movie-button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.details-button {
+    background: #222;
+    color: white;
+}
+
+    .details-button:hover {
+        color: white;
+        background: #444;
+    }
+
+.edit-button {
+    background: #eee;
+    color: #222;
+}
+
+    .edit-button:hover {
+        color: #222;
+        background: #ddd;
+    }
+
+.delete-button {
+    background: #f1f1f1;
+    color: #b00020;
+}
+
+    .delete-button:hover {
+        color: #b00020;
+        background: #e5e5e5;
+    }
+
+
+/* МОБІЛЬНА ВЕРСІЯ */
+
+@media (max-width: 700px) {
+
+    .moviegram-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .movie-card {
+        flex-direction: column;
+    }
+
+    .movie-poster-container,
+    .movie-poster,
+    .no-poster {
+        width: 180px;
+    }
+
+    .movie-poster,
+    .no-poster {
+        height: 260px;
+    }
+
+    .movie-buttons {
+        flex-wrap: wrap;
+    }
+}
+
+.field-validation-error {
+    display: block;
+    color: #dc3545;
+    margin-top: 5px;
+}
+
+.input-validation-error {
+    border-color: #dc3545 !important;
+}
+
+    .input-validation-error:focus {
+        border-color: #dc3545 !important;
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+#posterError {
+    display: block;
+    margin-top: 5px;
+}

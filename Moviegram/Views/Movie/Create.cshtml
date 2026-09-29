@@ -1,0 +1,62 @@
+﻿@model Moviegram.Models.Movie
+
+@{
+    ViewData["Title"] = "Додати фільм";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Додати фільм</h1>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Назва</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Year" class="form-label">Рік</label>
+        <input asp-for="Year" class="form-control" />
+        <span asp-validation-for="Year" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Genre" class="form-label">Жанр</label>
+        <input asp-for="Genre" class="form-control" />
+        <span asp-validation-for="Genre" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Director" class="form-label">Режисер</label>
+        <input asp-for="Director" class="form-control" />
+        <span asp-validation-for="Director" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Опис</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Постер</label>
+        <input type="file"
+               name="posterFile"
+               class="form-control"
+               accept="image/jpeg,image/png,image/webp" />
+
+        <span class="text-danger" id="posterError">
+            Будь ласка, виберіть постер
+        </span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Додати
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Назад
+    </a>
+
+</form>

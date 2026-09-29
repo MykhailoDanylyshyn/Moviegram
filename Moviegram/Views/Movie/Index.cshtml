@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Moviegram.Models.Movie>
+
+@{
+    ViewData["Title"] = "Moviegram";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="moviegram-page">
+
+    <div class="moviegram-header">
+        <div>
+            <h1>Мої фільми</h1>
+            <p>Колекція улюблених фільмів</p>
+        </div>
+
+        <a asp-action="Create" class="add-movie-button">
+            + Додати фільм
+        </a>
+    </div>
+
+    <div class="movies-list">
+
+        @foreach (var movie in Model)
+        {
+            <div class="movie-card">
+
+                <div class="movie-poster-container">
+                    @if (!string.IsNullOrEmpty(movie.PosterPath))
+                    {
+                        <img src="@movie.PosterPath"
+                             alt="@movie.Title"
+                             class="movie-poster" />
+                    }
+                    else
+                    {
+                        <div class="no-poster">
+                            Немає постера
+                        </div>
+                    }
+                </div>
+
+                <div class="movie-content">
+
+                    <h2>@movie.Title</h2>
+
+                    <div class="movie-info">
+                        <span>@movie.Year</span>
+                        <span>•</span>
+                        <span>@movie.Genre</span>
+                    </div>
+
+                    <p class="movie-director">
+                        Режисер: <strong>@movie.Director</strong>
+                    </p>
+
+                    <p class="movie-description">
+                        @movie.Description
+                    </p>
+
+                    <div class="movie-buttons">
+
+                        <a asp-action="Details"
+                           asp-route-id="@movie.Id"
+                           class="movie-button details-button">
+                            Детальніше
+                        </a>
+
+                        <a asp-action="Edit"
+                           asp-route-id="@movie.Id"
+                           class="movie-button edit-button">
+                            Редагувати
+                        </a>
+
+                        <a asp-action="Delete"
+                           asp-route-id="@movie.Id"
+                           class="movie-button delete-button">
+                            Видалити
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+</div>

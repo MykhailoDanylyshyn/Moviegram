@@ -1,0 +1,79 @@
+﻿
+@model Moviegram.Models.Movie
+
+@{
+    ViewData["Title"] = "Редагувати фільм";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Редагувати фільм</h1>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="PosterPath" />
+
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Назва</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Year" class="form-label">Рік</label>
+        <input asp-for="Year" class="form-control" />
+        <span asp-validation-for="Year" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Genre" class="form-label">Жанр</label>
+        <input asp-for="Genre" class="form-control" />
+        <span asp-validation-for="Genre" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Director" class="form-label">Режисер</label>
+        <input asp-for="Director" class="form-control" />
+        <span asp-validation-for="Director" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Опис</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.PosterPath))
+    {
+        <div class="mb-3">
+            <label class="form-label">Поточний постер</label>
+            <br />
+            <img src="@Model.PosterPath"
+                 alt="@Model.Title"
+                 style="width: 150px;" />
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Новий постер</label>
+        <input type="file"
+               name="posterFile"
+               class="form-control"
+               accept="image/*" />
+
+        <small class="text-muted">
+            Якщо новий постер не вибрати, залишиться старий.
+        </small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Зберегти
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Назад
+    </a>
+
+</form>
+
+

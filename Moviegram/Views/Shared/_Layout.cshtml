@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - Moviegram</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                Moviegram
+            </a>
+
+            <div class="navbar-nav ms-3">
+                <a class="nav-item nav-link"
+                   asp-controller="Home"
+                   asp-action="Index">
+                    Головна
+                </a>
+
+                <a class="nav-item nav-link"
+                   asp-controller="Movie"
+                   asp-action="Index">
+                    Вибір редакції
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container body-content mt-5 pt-4">
+
+        @RenderBody()
+
+        <hr />
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Moviegram</p>
+        </footer>
+
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
+   
+
+</body>
+</html>

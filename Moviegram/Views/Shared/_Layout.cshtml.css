@@ -1,0 +1,148 @@
+﻿/* Основні налаштування */
+
+html {
+    font-size: 14px;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #f5f6f8;
+    color: #212529;
+}
+
+/* Посилання */
+
+a {
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #3730a3;
+    }
+
+    /* Назва сайту */
+
+    a.navbar-brand {
+        white-space: normal;
+        text-align: center;
+        word-break: normal;
+        font-weight: 600;
+    }
+
+/* Кнопки */
+
+.btn {
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+
+/* Основна кнопка */
+
+.btn-primary {
+    color: #fff;
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+}
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #4338ca;
+        border-color: #4338ca;
+    }
+
+/* Активні навігаційні кнопки */
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+}
+
+/* Розділювачі */
+
+.border-top {
+    border-top: 1px solid #e2e5e9;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e2e5e9;
+}
+
+/* Тінь */
+
+.box-shadow {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Фокус полів */
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.15);
+}
+
+/* Помилки валідації */
+
+.text-danger {
+    font-size: 0.9rem;
+}
+
+/* Кнопка підтвердження */
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Footer */
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: #ffffff;
+}
+
+/* Картки */
+
+.card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Таблиці */
+
+.table {
+    background-color: #ffffff;
+}
+
+    .table th {
+        font-weight: 600;
+    }
+
+    .table td {
+        vertical-align: middle;
+    }
+
+/* Адаптивність */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .btn {
+        margin-bottom: 5px;
+    }
+
+}
