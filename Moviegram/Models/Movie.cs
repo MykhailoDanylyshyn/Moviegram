@@ -11,12 +11,14 @@ namespace Moviegram.Models
         [Display(Name = "Назва фільму")]
         public string? Title { get; set; }
 
+        [Required(ErrorMessage = "Будь ласка, введіть рік")]
         [Range(1888, int.MaxValue, ErrorMessage = "Рік має бути не менше 1888")]
         [Display(Name = "Рік")]
         public int? Year { get; set; }
 
 
         [Required(ErrorMessage = "Будь ласка, введіть жанр")]
+        [MyGenres(ErrorMessage = "Будь ласка, виберіть правильний жанр")]
         [Display(Name = "Жанр")]
         public string? Genre { get; set; }
 
